@@ -25,7 +25,7 @@ define('MAINTENANCE_MODE', false);
  * Zeigt Fehlermeldungen und Warnungen an
  * 
  */
-define('DEBUG_MODE', false);
+define('DEBUG_MODE', true);
 
 /* Root-Verzeichnis */
 define('CURRENTDIR', dirname(__FILE__));

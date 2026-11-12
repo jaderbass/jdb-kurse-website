@@ -46,6 +46,12 @@ small {
   line-height: 1.2;
 }
 
+.font-sm {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--jdb-code-color);
+}
+
 .jdb-logo-a {
   color: var(--jdb-color-primary) !important;
 }
@@ -151,8 +157,8 @@ h3>img {
   border-radius: .25rem;
 }
 
-.bd-clipboard + .highlight, 
-.bd-edit + .highlight {
+.bd-clipboard+.highlight,
+.bd-edit+.highlight {
   margin-top: 0;
 }
 
@@ -188,10 +194,12 @@ h3>img {
   fill: currentcolor;
 }
 
-.bd-clipboard, .bd-edit {
+.bd-clipboard,
+.bd-edit {
   position: relative;
   display: none;
   float: right;
+
   @include media-breakpoint-up(md) {
     display: block;
   }

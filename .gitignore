@@ -11,6 +11,9 @@ logs/
 # Kursdownloads (werden künftig über GitHub bereitgestellt)
 downloads/
 
+# Backup-Dateien
+backups/
+
 # Betriebssystem
 .DS_Store
 Thumbs.db

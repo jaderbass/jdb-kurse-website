@@ -27,17 +27,17 @@
           Meine genutzten Editor-Themes
         </h3>
         <p>Für die Coding-Aufgaben auf meinem Entwicklungsrechner nutze ich das Andromeda-Theme von Eliver Lara. Ein Dark-Theme, welches mir am besten gefällt.</p>
-        <p>Für meine Präsenz-Kurse nutze ich das Theme "Hell (Visual Studio)" (englisch "Visual Studio Light") von VS Code mit einer von mir erweiterten <a href="https://pmueller.de/vs-code-mit-farbschema-von-brackets/">Anpassung von Peter Müller</a>, mit welchem das Standard-Theme von Adobe Brackets nachempfunden wird. Ich nutze dieses Light-Theme, da es auf dem Beamer für die Teilnehmer besser funktioniert als ein Dark-Theme.</p>
+        <p>Für meine Präsenz-Kurse nutze ich das Theme <strong>"Light&nbsp;2026"</strong> von VS Code. Ich nutze dieses Light-Theme, da es auf dem Beamer für die Teilnehmer besser funktioniert als ein Dark-Theme.</p>
         <p>Für den XML-Kurs nutze ich das Atom-One-Light-Theme von Mahmoud Ali, da hier die XML-Syntax ein wenig besser hervorgehoben wird.</p>
         <ul class="list-unstyled">
           <li style="list-style-type:none;background:url('../images/andromeda-icon.png') no-repeat left top;background-size: 65px;">
-            <b>Andromeda</b> <small class="text-muted">von Eliver Lara</small><br>auf meinem Entwicklungs-Rechner für das eigene Coding
+            <strong>Andromeda</strong> <small class="text-muted">von Eliver Lara</small><br>auf meinem Entwicklungs-Rechner für das eigene Coding
           </li>
           <li style="list-style-type:none;background:url('../vc-fav/favicon.ico') no-repeat left top;background-size: 65px;">
-            <b>Hell (Visual Studio)</b><br>(englisch "Visual Studio Light")<br>für meine Präsenz-Kurse<br>Erweiterung: <a href="../downloads/p-mueller-extended.json" download>p-mueller-extended.json</a><br><small>Falls bereits Einträge in Eurer <code>settings.json</code>-Datei stehen, bitte den heruntergeladenen Code kopieren und vor diesen Einträgen einfügen.</small>
+            <strong>Light 2026</strong><br>für meine Präsenz-Kurse
           </li>
           <li style="list-style-type:none;background:url('../images/atom-one-light-icon.png') no-repeat left top;background-size: 65px;">
-            <b>Atom One Light</b> <small class="text-muted">von Mahmoud Ali</small><br>für meine XML-Präsenz-Kurse
+            <strong>Atom One Light</strong> <small class="text-muted">von Mahmoud Ali</small><br>für meine XML-Präsenz-Kurse
           </li>
         </ul>
       </div>
@@ -121,8 +121,10 @@
         ?>
 
       </div>
+    </div>
+      
 
-      <div class="row justify-content-center g-5">
+    <div class="row justify-content-center g-5">
         <div class="col col-md-10 col-lg-6 col-xl-5">
           <h3 id="mySettings">
             <img src="images/settings-gear.svg" alt="">
@@ -182,7 +184,6 @@
           echo $htmlOutput;
           ?>
 
-        </div>
       </div>
     </div>
 

@@ -18,7 +18,7 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
 <main id="pageMain">
   <div id="hero" class="text-white">
     <div class="container col-xxl-8 px-4 pt-5">
-      <div class="row flex-lg-row-reverse justify-content-center align-items-center g-5 py-5">
+      <section class="row flex-lg-row-reverse justify-content-center align-items-center g-5 py-5">
         <div class="col-6 col-sm-4 col-lg-3">
           <?php if (isset($pageLogo)) : ?>
             <img src="<?= $pageLogo; ?>" class="page-logo d-block mx-auto img-fluid" alt="<?= $pageTitle; ?> Logo" loading="lazy">
@@ -30,15 +30,17 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
           </h1>
           <p class="lead"><?= isset($pageSlogan) ? $pageSlogan : ''; ?></p>
         </div>
-      </div>
+      </section>
     </div>
   </div>
 
 
   <div class="container pt-5">
-    <div class="row">
-      <div class="col-lg-6">
-
+    <div class="row justify-content-between">
+      <section class="col-12">
+        
+        <!-- ? Kursdateien
+        ? ============================================================================================= -->
         <h2 id="kursdateien">
           <!-- <img src="images/files-24.png" alt="Icon Kursdateien"> -->
           <svg xmlns="http://www.w3.org/2000/svg" class="icon" aria-hidden="true" focusable="false" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
@@ -65,43 +67,8 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
           <p>Für diesen Kurs werden momentan keine zusätzlichen Kursdateien benötigt.</p>
         <?php endif; ?>
 
-        <h2 id="erweiterungen">
-          <img src="images/extensions.svg" alt="Icon Erweiterungen">
-          Liste der Erweiterungen
-        </h2>
-        <?php if (isset($extensions)) : ?>
-          <?php foreach ($extensions as $extLang => $extList) : ?>
-            <h3><?= $extLang; ?></h3>
-            <ul style="list-style-type:none;">
-              <?php foreach ($extList as $extId => $properties) : ?>
-                <li style="background:url(<?= $properties['list-icon'] ?>) no-repeat left top;background-size:65px;padding:0 0 25px 75px;margin-left:-35px;margin-bottom:10px">
-                  <a href="<?= $properties['url'] ?>" target="_blank"><?= $properties['name']; ?></a> <small class="text-muted"><i>von <?= $properties['autor']; ?></i></small>
-                  <?= $properties['desc']; ?>
-                  <?php if (isset($includedExtensions) && array_key_first($includedExtensions) === $extLang): ?>
-                    <h6 style="margin-top: 1rem;">In diesem Extension Pack sind enthalten:</h6>
-                    <?php foreach ($includedExtensions as $extLang => $extList): ?>
-                      <ul style="list-style-type:none;margin-top:10px;">
-                        <?php foreach ($extList as $extId => $properties) : ?>
-                          <li style="background:url(<?= $properties['list-icon'] ?>) no-repeat left top;background-size:35px;padding:0 0 5px 45px;margin-left:-15px;margin-bottom:5px;font-size:0.75rem;">
-                            <a href="<?= $properties['url'] ?>" target="_blank"><?= $properties['name']; ?></a> <small class="text-muted"><i>von <?= $properties['autor']; ?></i></small>
-                            <?= $properties['desc']; ?>
-                          </li>
-                        <?php endforeach; ?>
-                      </ul>
-                    <?php endforeach; ?>
-                  <?php endif; ?>
-                </li>
-              <?php endforeach; ?>
-            </ul>
-          <?php endforeach; ?>
-        <?php else : ?>
-          <div class="container">
-            <?php readfile($content); ?>
-          </div>
-        <?php endif; ?>
-      </div>
-
-      <div class="col-lg-6">
+        <!-- ? Hinweis PHP
+        ? ============================================================================================= -->
         <?php if ($filePrefix === 'php') : ?>
           <h2 id="notice">
             <img src="images/info.svg" alt="">
@@ -109,32 +76,11 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
           </h2>
           <p>PHP ist eine serverbasierte Skriptsprache. Um mit PHP entwickeln zu können benötigen wir einen Webserver. Welchen Webserver wir benutzen ist im Grunde egal. Hauptsache ist, dass PHP auf diesem Webserver installiert ist.</p>
           <?= $webserverText; ?>
-          <h2 id="executablepath">
-            <img src="images/settings-gear.svg" alt="">
-            PHP Executable Path einstellen
-          </h2>
-          <ol>
-            <li>über <code><kbd>STRG</kbd> + <kbd>,</kbd></code> die Settings öffnen</li>
-            <li>oben rechts auf das kleine Datei-Icon klicken <img src="images/settings-icon.png" alt="settings icon"></li>
-            <li>es öffnet sich die Datei <code>settings.json</code></li>
-            <li>
-              der Eintrag <code class="language-json">"php.validate.executablePath": ""</code> wird ans Ende der Datei <code>settings.json</code> geschrieben. Diesen Eintrag mit dem Pfad der PHP-Erweiterung ergänzen.<br>solltest Du noch <b>XAMPP</b> mit der Standard-Installation nutzen, sieht der komplette Eintrag folgendermaßen aus:
-
-              <?php
-              $htmlOutput = printCopyToClipboardButton('"php.validate.executablePath": "c:/xampp/php/php.exe"', 'php', 'json');
-              echo $htmlOutput;
-              ?>
-
-              Wenn Du <b>Laragon</b> mit der Standard-Installation nutzt, nimmst Du folgenden Eintrag:
-
-              <?php
-              $htmlOutput = printCopyToClipboardButton('"php.validate.executablePath": "c:/laragon/bin/php.exe"', 'laragon', 'json');
-              echo $htmlOutput;
-              ?>
-
-            </li>
-          </ol>
+          
         <?php endif; ?>
+
+        <!-- ? Hinweis Laravel
+        ? ============================================================================================= -->
         <?php if ($filePrefix === 'laravel') : ?>
           <h2 id="notice">
             <img src="images/info.svg" alt="">
@@ -143,6 +89,11 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
           <p>Laravel ist ein weit verbreitetes PHP-Framework. Für die Entwicklung bringt Laravel einen eigenen Webserver mit.</p>
           <p>Da wir allerdings mit Datenbanken arbeiten und geringe administrative Aufgaben erledigen müssen, sollte ein Datenbank-Server installiert sein.</p>
           <?= $webserverText; ?>
+        <?php endif; ?>
+
+        <!-- ? Executable Path
+        ? ============================================================================================= -->
+        <?php if (in_array($filePrefix, ['php', 'laravel'], true)) : ?>
           <h2 id="executablepath">
             <img src="images/settings-gear.svg" alt="">
             PHP Executable Path einstellen
@@ -167,7 +118,10 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
 
             </li>
           </ol>
-        <?php endif; ?>
+        <?php endif; ?>          
+
+        <!-- ? Hinweis React
+        ? ============================================================================================= -->
         <?php if ($filePrefix === 'react') : ?>
           <h2 id="notice">
             <img src="images/info.svg" alt="">
@@ -182,6 +136,182 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
             <li><code class="language-plaintext">node_modules</code> gehört <strong>nicht ins Git-Repository</strong>.</li>
           </ul>
         <?php endif; ?>
+
+      </section>
+
+      <section class="col-12">
+
+        <!-- ? Erweiterungen
+        ? ============================================================================================= -->
+        <h2 id="erweiterungen">
+            <img src="images/extensions.svg" alt="">
+            Liste der Erweiterungen
+        </h2>
+
+        <?php if (isset($extensions)) : ?>
+
+          <div class="row g-4 mb-5">
+
+            <?php foreach ($extensions as $extLang => $extList) : ?>
+
+            <?php $extListCount = count($extensions[$extLang]); ?>
+
+            <?php
+            $categoryClasses = [
+              'HTML' => 'extension-html',
+              'CSS' => 'extension-css',
+              'JavaScript' => 'extension-js',
+              'PHP' => 'extension-php',
+              'Laravel' => 'extension-laravel',
+              'XML' => 'extension-xml',
+            ];
+
+            $categoryClass = $categoryClasses[$extLang] ?? 'extension-default';
+            ?>
+
+            <?php foreach ($extList as $extId => $properties) : ?>
+
+              <?php
+              #echo '<pre>', key_exists('HTML', $extensions), '</pre>';
+
+              $isHtmlPack = $properties['name'] === 'HTML Extension Pack';
+
+              $columnClass = 'col-12 col-md-6 col-xl-4';
+
+              if ($isHtmlPack) {
+                  $columnClass = 'col-12 col-md-6 col-xl-6';
+              } elseif (array_key_exists('HTML', $extensions) && count($extensions) >= 3) {
+                  $columnClass = 'col-12 col-md-6 col-xl-3';
+              }
+              ?>
+
+              <div class="<?= $columnClass ?>">
+                <article class="card h-100 extension-card">
+
+                  <div class="card-header <?= $categoryClass; ?>">
+                    <h3 class="h4 mb-0"><?= htmlspecialchars($extLang); ?></h3>
+                  </div>
+                  <div class="card-body">
+
+                    <!-- Erweiterung: Logo, Name, Autor und Kategorie -->
+                    <div class="d-flex align-items-start gap-3 mb-3">
+
+                      <img
+                          src="<?= htmlspecialchars($properties['list-icon']); ?>"
+                          class="extension-icon"
+                          alt=""
+                          loading="lazy"
+                      >
+
+                      <div>
+                        <h3 class="card-title h5 mb-1">
+                          <a
+                              href="<?= htmlspecialchars($properties['url']); ?>"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                          >
+                            <?= htmlspecialchars($properties['name']); ?>
+                          </a>
+                        </h3>
+
+                        <small class="d-block text-muted">
+                          von <?= htmlspecialchars($properties['autor']); ?>
+                        </small>
+                      </div>
+
+                    </div>
+
+                    <!-- Beschreibung -->
+                    <div class="card-text">
+                      <?= $properties['desc']; ?>
+                    </div>
+
+                    <!-- Enthaltene Erweiterungen eines Extension Packs -->
+                    <?php if (
+                        isset($includedExtensions)
+                        && array_key_first($includedExtensions) === $extLang
+                    ) : ?>
+
+                    <details class="extension-included mt-3 pt-3 border-top">
+
+                      <summary>
+                        Enthaltene Erweiterungen anzeigen
+                      </summary>
+
+                      <div class="mt-3">
+
+                        <?php foreach ($includedExtensions as $includedLang => $includedList) : ?>
+
+                          <?php foreach ($includedList as $includedId => $includedProperties) : ?>
+
+                            <div class="d-flex align-items-start gap-2 mb-3">
+
+                              <img
+                                src="<?= htmlspecialchars($includedProperties['list-icon']); ?>"
+                                class="extension-icon-small"
+                                alt=""
+                                loading="lazy"
+                              >
+
+                              <div>
+                                <a
+                                  href="<?= htmlspecialchars($includedProperties['url']); ?>"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  <?= htmlspecialchars($includedProperties['name']); ?>
+                                </a>
+
+                                <small class="d-block text-muted">
+                                  von <?= htmlspecialchars($includedProperties['autor']); ?>
+                                </small>
+
+                                <div class="extension-description-small">
+                                  <?= $includedProperties['desc']; ?>
+                                </div>
+                              </div>
+
+                            </div>
+
+                          <?php endforeach; ?>
+
+                        <?php endforeach; ?>
+
+                      </div>
+
+                    </details>
+
+                    <?php endif; ?>
+
+                  </div>
+
+                </article>
+              </div>
+
+              <?php endforeach; ?>
+
+            <?php endforeach; ?>
+
+          </div>
+
+        <?php else : ?>
+
+            <div class="container">
+                <?php readfile($content); ?>
+            </div>
+
+        <?php endif; ?>
+      
+ 
+      </section>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+      
+
+        <!-- ? Code-Snippets Erläuterung
+        ? ============================================================================================= -->
         <h2 id="snippets">
           <img src="images/settings-gear.svg" alt="">
           Eigene Code-Snippets nutzen
@@ -232,7 +362,6 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
             </details>
           </li>
 
-          </li>
           <li>Variante 1 (empfohlen):
             <ul>
               <li>Den folgenden Pfad je nach OS in die Zwischenablage kopieren:
@@ -270,7 +399,10 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
       </div>
     </div>
   </div>
-  <div class="container mb-5">
+
+  <!-- ? Snippets-Codes
+  ? ============================================================================================= -->
+  <section class="container my-5">
     <h3>Snippets für <?= $pageTitle; ?></h3>
     <?php foreach ($snippets as $snippetLang => $snippetFile) : ?>
       <div class="accordion" id="snippetAccordion<?= substr($snippetLang, 0, 3); ?>">
@@ -299,6 +431,6 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
         </div>
       </div>
     <?php endforeach; ?>
-  </div>
+  </section>
 
 </main>
