@@ -1,0 +1,210 @@
+/* === Basics === */
+/* Global oder am Root aktivieren */
+:root {
+  interpolate-size: allow-keywords;
+}
+
+html {
+  font-size: 20px;
+  font-family: Aptos, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+p,
+ol {
+  margin-bottom: 10px;
+}
+
+code {
+  font-family: "Fira Code", Consolas, "Courier New", monospace;
+  color: var(--bs-success);
+  font-weight: 500;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 8px;
+  border: var(--jdb-kbd-border);
+  border-radius: 0.5rem;
+}
+
+b {
+  font-weight: 500
+}
+
+small {
+  display: block;
+  font-size: 0.6rem;
+  line-height: 1.2;
+}
+
+.jdb-logo-a {
+  color: var(--jdb-color-primary) !important;
+}
+
+.page-logo {
+  max-height: 113px;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -.125em;
+}
+
+.copy-wrapper {
+  position: relative;
+
+  >button {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+  }
+
+  code {
+    padding: 2.3rem 0.5rem 0 !important;
+  }
+}
+
+@media screen and (min-width:960px) {
+  .album .card-group {
+    width: 75%;
+  }
+}
+
+
+a[download] {
+  &::after {
+    font-family: 'simple-line-icons';
+    content: " \e083";
+  }
+}
+
+h3>img {
+  width: 24px;
+  height: 24px;
+}
+
+.list-unstyled>li {
+  padding: 0 0 25px 75px;
+  margin-left: 0px;
+  margin-bottom: 10px
+}
+
+#pageMain {
+  a[href^="https://"] {
+    &:not([download]) {
+      &::after {
+        font-family: 'simple-line-icons';
+        content: " \e05a";
+      }
+    }
+
+  }
+}
+
+#hero {
+  background-color: var(--jdb-dark-bg);
+}
+
+.bd-content .bd-code-snippet {
+  margin-bottom: 1rem;
+
+}
+
+.bd-code-snippet {
+  margin: 0 -1.5rem 1rem;
+  margin-right: -1.5rem;
+  margin-bottom: 1rem;
+  margin-left: -1.5rem;
+  border: solid var(--bs-border-color);
+  border-width: 1px 0;
+
+  @include media-breakpoint-up(md) {
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    border-radius: var(--bs-border-radius);
+  }
+}
+
+.btn-clipboard {
+  position: relative;
+  z-index: 2;
+  margin-top: 1.25rem;
+  margin-right: .75rem;
+
+  display: block;
+  padding: .5em;
+  line-height: 1;
+  color: var(--bs-body-color);
+  background-color: var(--bd-pre-bg);
+  border: 0;
+  border-radius: .25rem;
+}
+
+.bd-clipboard + .highlight, 
+.bd-edit + .highlight {
+  margin-top: 0;
+}
+
+.highlight {
+  position: relative;
+  padding: .75rem 1.5rem;
+  background-color: var(--bd-pre-bg);
+
+  @include media-breakpoint-up(md) {
+    padding: .75rem 1.25rem;
+    border-radius: calc(var(--bs-border-radius) - 1px);
+  }
+}
+
+.highlight pre {
+  padding: .25rem 0 .875rem;
+  margin-top: .8125rem;
+  margin-bottom: 0;
+  overflow: overlay;
+  white-space: pre;
+  background-color: transparent;
+  border: 0;
+
+  @include media-breakpoint-up(lg) {
+    margin-right: 1.875rem;
+  }
+}
+
+.bi {
+  width: 1em;
+  height: 1em;
+  vertical-align: -.125em;
+  fill: currentcolor;
+}
+
+.bd-clipboard, .bd-edit {
+  position: relative;
+  display: none;
+  float: right;
+  @include media-breakpoint-up(md) {
+    display: block;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  #jdbStandard {
+    max-width: 25%;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  #jdbStandard {
+    max-width: 100%;
+  }
+}

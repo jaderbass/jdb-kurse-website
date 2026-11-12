@@ -1,0 +1,44 @@
+{
+	"Print to console": {
+		"scope": "javascript,typescript",
+		"prefix": "log",
+		"body": "console.log('$1');",
+		"description": "Log output to console"
+	},
+	"Kommentar Titel JavaScript": {
+		"scope": "javascript,typescript",
+		"prefix": "komtitel",
+		"body": "/* ? === ${1:Titel} === */",
+		"description": "Ausgabe eines Kommentar-Titels in JS-Dateien"
+	},
+	"Kommentar farbig": {
+		"scope": "javascript,typescript",
+		"prefix": "komcolor",
+		"body": [
+			"/**",
+			" * ? ${1:Titel}",
+			" */"
+		],
+		"description": "Ausgabe farbiger Kommentare"
+	},
+	"Kommentar Funktionen": {
+		"scope": "javascript,typescript",
+		"prefix": "komfkt",
+		"body": [
+			"/**",
+			" * function ${1:Name}()",
+			" *",
+			" * @param",
+			" *",
+			" * @return",
+			" */"
+		],
+		"description": "Ausgabe eines Kommentars für Funktionen, Klassen oder Methoden"
+	},
+	"Ausgabe im Dokument": {
+		"scope": "javascript,typescript",
+		"prefix": "docw",
+		"body": "document.write($1);",
+		"description": "Die document.write()-Methode"
+	}
+}

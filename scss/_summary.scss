@@ -1,0 +1,46 @@
+/* Standard-Marker in Chromium/Edge und Safari sauber zurücksetzen */
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::marker {
+  display: none;
+}
+
+/* Flexbox für saubere Ausrichtung */
+details summary {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  /* Wichtig für moderne Edge/Chrome-Versionen */
+}
+
+/* Eigenes SVG als Icon mit explizitem -webkit-mask Prefix für Edge/Chromium */
+details summary::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.5em;
+  background-color: currentColor;
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>') no-repeat center / contain;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>') no-repeat center / contain;
+  transition: transform 0.2s ease;
+}
+
+/* Drehung beim Öffnen */
+details[open] summary::before {
+  transform: rotate(90deg);
+}
+
+/* Die native und saubere Höhen-Animation */
+details::details-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease, content-visibility 0.3s ease allow-discrete;
+}
+
+details[open]::details-content {
+  height: auto;
+}

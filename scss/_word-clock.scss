@@ -1,0 +1,58 @@
+/* === Word-Clock === */
+@mixin mq($size) {
+  @media screen and (min-width: $size) {
+    @content
+  }
+}
+
+/* major-mono-display-regular - latin */
+@font-face {
+  font-display: swap;
+  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Major Mono Display';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/major-mono-display-v16-latin-regular.woff2') format('woff2');
+  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+#word_clock {
+  font-family: sans-serif;
+  font-size: 18px;
+  color: var(--jdb-color-primary);
+  border: 1px solid #999;
+  max-width: 15rem;
+  position: fixed;
+  top: 150px;
+  right: 20px;
+
+  @include mq(992px) {
+    top: 210px;
+  }
+
+  @include mq(1200px) {
+    top: 130px;
+  }
+
+  .container {
+    margin: 1rem 0;
+    height: 1.125rem !important;
+  }
+
+  small {
+    padding: 0 0.75rem;
+    display: inline;
+    color: var(--bs-gray-500);
+  }
+}
+
+#clock {
+  font-family: 'Major Mono Display';
+  cursor: pointer;
+}
+
+.tooltip {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 1);
+}

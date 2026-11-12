@@ -1,0 +1,16 @@
+:root {
+    --jdb-code-color: cornflowerblue;
+    --jdb-kbd-border: 1px solid #999;
+    --jdb-footer-social-svg-color: #fff !important;
+    --jdb-color-primary: #fa8704;
+    --jdb-dark-bg: #313a46;
+}
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);

@@ -1,0 +1,76 @@
+{
+	"Kommentar Titel HTML": {
+		"scope": "html",
+		"prefix": "komtitel",
+		"body": [
+			"<!-- ? ${1:Titel}",
+			"? ============================================================================================= -->"
+		],
+		"description": "Ausgabe eines Kommentar-Titels in HTML-Dateien"
+	},
+	"Kommentar Titel CSS/SCSS": {
+		"scope": "css,scss",
+		"prefix": "komtitel",
+		"body": "/* ? === ${1:Titel} === */",
+		"description": "Ausgabe eines Kommentar-Titels in CSS-Dateien"
+	},
+	"Bootstrap 5 Grundgerüst nur CSS": {
+		"scope": "html,php,blade",
+		"prefix": "bs5",
+		"description": "Bootstrap Grundgerüst nur CSS",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html lang=\"de\">",
+			"<head>",
+			"\t<meta charset=\"UTF-8\">",
+			"\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+			"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+			"\t<title>${1:Document}</title>",
+			"\t<!-- CSS only -->",
+			"\t<!-- Bootstrap-CSS -->",
+			"\t<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">",
+			"\t<!-- Custom-CSS -->",
+			"\t<link rel=\"stylesheet\" href=\"$2\">",
+			"</head>",
+			"<body>",
+			"\t$3",
+			"</body>",
+			"</html>"
+		]
+	},
+	"Bootstrap 5 Grundgerüst mit JS": {
+		"scope": "html,php,blade",
+		"prefix": "bs5js",
+		"description": "Bootstrap Grundgerüst - komplett mit JavaScript",
+		"body": [
+			"<!DOCTYPE html>",
+			"<html lang=\"de\">",
+			"<head>",
+			"\t<meta charset=\"UTF-8\">",
+			"\t<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">",
+			"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+			"\t<title>${1:Document}</title>",
+			"\t<!-- CSS only -->",
+			"\t<!-- Bootstrap-CSS -->",
+			"\t<link rel=\"stylesheet\" href=\"css/bootstrap.min.css\">",
+			"\t<!-- Custom-CSS -->",
+			"\t<link rel=\"stylesheet\" href=\"$2\">",
+			"</head>",
+			"<body>",
+			"\t$3",
+			"<!-- Bootstrap JavaScript -->",
+			"<script src=\"js/bootstrap.bundle.min.js\"></script>",
+			"</body>",
+			"</html>"
+		]
+	},
+	"Bootstrap JS": {
+		"scope": "html,php,blade",
+		"prefix": "bs5jsonly",
+		"description": "Bootstrap JavaScript",
+		"body": [
+			"<!-- Bootstrap JavaScript -->",
+			"<script src=\"js/bootstrap.bundle.min.js\"></script>"
+		]
+	}
+}

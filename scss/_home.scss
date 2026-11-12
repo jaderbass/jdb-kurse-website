@@ -1,0 +1,16 @@
+#phpLogo {
+    width: 340px;
+    height: 205px;
+    display: inline-block;
+    margin: 0px auto;
+}
+
+.card-header {
+    min-height: 266.16px;
+}
+.album .card-header {
+    background: var(--jdb-dark-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

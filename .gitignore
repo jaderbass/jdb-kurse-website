@@ -1,0 +1,16 @@
+# VS Code
+.vscode/
+
+# Archive
+*.zip
+
+# Logdateien
+logs/
+*.log
+
+# Kursdownloads (werden künftig über GitHub bereitgestellt)
+downloads/
+
+# Betriebssystem
+.DS_Store
+Thumbs.db

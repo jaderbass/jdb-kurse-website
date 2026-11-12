@@ -1,0 +1,19 @@
+#mainNav {--bs-bg-opacity: .9;}
+
+.navbar-brand {
+    width: 150px;
+}
+
+.navbar-nav {
+
+    .nav-link.active,
+    .show>.nav-link {
+        color: var(--jdb-color-primary);
+    }
+}
+
+.nav-link {
+    &:hover {
+        color: var(--jdb-color-primary);
+    }
+}

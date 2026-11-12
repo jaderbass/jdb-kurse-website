@@ -1,0 +1,14 @@
+{
+	"React Intro": {
+		"scope": "javascript,typescript,javascriptreact,typescriptreact",
+		"prefix": "react",
+		"body": [
+			"import React from \"react\";",
+			"",
+			"export function ${1:App}() {",
+			"\t$2",
+			"}"
+		],
+		"description": "React importieren und component-function App anlegen"
+	}
+}

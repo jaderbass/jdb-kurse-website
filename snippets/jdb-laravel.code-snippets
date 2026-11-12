@@ -1,0 +1,14 @@
+{
+	"Laravel Route Get Function": {
+		"scope": "php",
+		"prefix": "rgf",
+		"description": "Erzeugt ein Standard Route::get('', function)",
+		"body": ["Route::get( '$1', function() {", "\treturn $2;", "});"]
+	},
+	"Laravel Route Get Controller": {
+		"scope": "php",
+		"prefix": "rgc",
+		"description": "Erzeugt ein Standard Route::get('', [Controller]])",
+		"body": "Route::get( '${1:page}', [${2:Name}Controller::class, '${3:function}'] );"
+	}
+}

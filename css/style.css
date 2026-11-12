@@ -1,0 +1,96 @@
+:root {
+  --jdb-code-color: cornflowerblue;
+  --jdb-kbd-border: 1px solid #999;
+  --jdb-footer-social-svg-color: #fff !important;
+  --jdb-color-primary: #fa8704;
+}
+
+/* === Basics === */
+html {
+  font-size: 20px;
+}
+h1,
+h2 {
+  font-weight: normal;
+}
+
+h2 {
+  margin-top: 40px;
+}
+
+p,
+ol {
+  margin-bottom: 10px;
+}
+
+ol,
+ul {
+  margin-left: 20px;
+}
+
+code {
+  font-family: "Fira Code", Consolas, "Courier New", monospace;
+  color: var(--jdb-code-color);
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px;
+  border: var(--jdb-kbd-border);
+  border-radius: 0.5rem;
+}
+
+.copy-wrapper {
+  position: relative;
+}
+.copy-wrapper > button {
+  position: absolute;
+  top: 40px;
+  right: 20px;
+}
+
+a[download]::after {
+  font-family: "simple-line-icons";
+  content: " \e083";
+}
+
+h3 > img {
+  width: 24px;
+  height: 24px;
+}
+
+#pageMain a[href^="https://"]:not([download])::after {
+  font-family: "simple-line-icons";
+  content: " \e05a";
+}
+
+.navbar-brand {
+  width: 150px;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .show > .nav-link {
+  color: var(--jdb-color-primary);
+}
+
+.nav-link:hover {
+  color: var(--jdb-color-primary);
+}
+
+#phpLogo {
+  width: 340px;
+  height: 205px;
+  display: inline-block;
+  margin: 0px auto;
+}
+
+.card-header {
+  min-height: 266.16px;
+}
+
+#pageFooter img {
+  width: 30px;
+}
+#pageFooter li svg, #pageFooter li a {
+  fill: var(--jdb-footer-social-svg-color);
+}/*# sourceMappingURL=style.css.map */

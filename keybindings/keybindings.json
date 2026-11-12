@@ -1,0 +1,6 @@
+[
+    {
+        "key": "ctrl+alt+t",
+        "command": "editor.emmet.action.wrapWithAbbreviation"
+    }
+]

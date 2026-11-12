@@ -1,0 +1,32 @@
+{
+	"Kommentar Titel XML": {
+		"scope": "xml",
+		"prefix": "komtitel",
+		"body": [
+			"<!-- ? ${1:Titel}",
+			"============================================================================================= -->"
+		],
+		"description": "Ausgabe eines Kommentar-Titels in XML-Dateien"
+	},
+	"Prolog Schema": {
+		"scope": "xsd",
+		"prefix": "pxsd",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<xs:schema xmlns:xs=\"http://w3.org/2001/XMLSchema\">",
+			"$1",
+			"</xs:schema>"
+		],
+		"description": "Ausgabe des Prologs für Schema-Dateien"
+	},
+	"Prolog XML": {
+		"scope": "xml",
+		"prefix": "pxml",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"UTF-8\"?>",
+			"<!DOCTYPE ${1:Root-Element} ${2:SYSTEM} \"${3:DTD-Datei}\">",
+			"$3"
+		],
+		"description": "Ausgabe des Prologs für XML-Dateien"
+	}
+}

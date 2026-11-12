@@ -1,0 +1,12 @@
+#pageFooter {
+  background-color: var(--jdb-dark-bg);
+  img {
+    width: 30px;
+  }
+
+  li {
+    svg, a {
+      fill: var(--jdb-footer-social-svg-color);
+    }
+  }
+}

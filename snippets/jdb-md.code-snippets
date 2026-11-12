@@ -1,0 +1,72 @@
+{
+	"Code-Ausgabe Git-Bash": {
+		"scope": "markdown",
+		"prefix": "cbash",
+		"body": [
+			"```bash",
+			"$1",
+			"```"
+		],
+		"description": "Syntax-Highlighting für GitBash cmd"
+	},
+	"Code-Ausgabe Text": {
+		"scope": "markdown",
+		"prefix": "ctxt",
+		"body": [
+			"```txt",
+			"$1",
+			"```"
+		],
+		"description": "Syntax-Highlighting für Blank-Text"
+	},
+	"Code-Ausgabe CSV": {
+		"scope": "markdown",
+		"prefix": "ccsv",
+		"body": [
+			"```csv",
+			"$1",
+			"```"
+		],
+		"description": "Syntax-Highlighting für CSV-Tabellen"
+	},
+	"Code-Ausgabe SQL": {
+		"scope": "markdown",
+		"prefix": "csql",
+		"body": [
+			"```sql",
+			"$1",
+			"```"
+		],
+		"description": "Syntax-Highlighting für SQL-Code"
+	},
+	"Code-Ausgabe PHP": {
+		"scope": "markdown",
+		"prefix": "cphp",
+		"body": [
+			"```php",
+			"$1",
+			"```"
+		],
+		"description": "Syntax-Highlighting für PHP-Code"
+	},
+	"Code-Ausgabe JSON": {
+		"scope": "markdown",
+		"prefix": "cjson",
+		"body": [
+			"```json",
+			"$1",
+			"```"
+		],
+		"description": "Syntax-Highlighting für JSON-Code"
+	},
+	"Code-Ausgabe VBA": {
+		"scope": "markdown",
+		"prefix": "cvba",
+		"body": [
+			"```vba",
+			"$1",
+			"```"
+		],
+		"description": "Syntax-Highlighting für VBA-Code"
+	},
+}

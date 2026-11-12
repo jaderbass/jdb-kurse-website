@@ -1,0 +1,41 @@
+{
+	"XHR open and send": {
+		"scope": "javascript,typescript",
+		"prefix": "xhrsend",
+		"body": [
+			"resObj.open( '${0:get}', '$1', true );",
+			"resObj.onload = handleResponse;",
+			"resObj.send( null );"
+		],
+		"description": "open XHR-Object, register callback to onload, send"
+	},
+	"XHR complete": {
+		"scope": "javascript,typescript",
+		"prefix": "xhrcomp",
+		"body": [
+			"var xhr = erzXHRObjekt();",
+			",",
+			"function sndReq() {",
+			"\txhr.open('${0:get}', '$1', true);",
+			"\txhr.onload = handleResponse;",
+			"\txhr.send(null);",
+			"\txhr.onerror = getXhrError;",
+			"}",
+			"",
+			"function handleResponse() {",
+			"\t$2",
+			"}",
+			"",
+			"function getXhrError() {",
+			"\t${3:console.log(\"Error: \" + xhr.status)};",
+			"}",
+			"",
+			"function init() {",
+			"\t$4;",
+			"}",
+			"",
+			"document.addEventListener(\"DOMContentLoaded\", init);"
+		],
+		"description": "complete XHR handling"
+	},
+}
