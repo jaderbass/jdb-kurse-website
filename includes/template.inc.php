@@ -68,6 +68,8 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
         <?php endif; ?>
 
       </section>
+
+      <?php if (in_array($filePrefix, ['php', 'laravel'], true)) : ?>
       <section class="col-12 col-lg-10">
 
         <div class="alert alert-info" role="alert">
@@ -100,10 +102,12 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
         </div>
 
       </section>
-      <section class="col-12">
+      <?php endif; ?>
 
-        <!-- ? Executable Path
-        ? ============================================================================================= -->
+      
+      <!-- ? Executable Path
+      ? ============================================================================================= -->
+      <section class="col-12">
         <?php if (in_array($filePrefix, ['php', 'laravel'], true)) : ?>
           <h2 id="executablepath">
             <img src="images/settings-gear.svg" alt="">
@@ -337,82 +341,90 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
           Eigene Code-Snippets nutzen
         </h2>
         <p>Ich habe für meine Kurse eigene Code-Snippet-Dateien erstellt, die das Coding erheblich erleichtern. Mit den folgenden Schritten kannst du diese Snippets selbst nutzen:</p>
-        <ol>
-          <li>Download-Verzeichnis des Browsers ändern:
+        <ol class="first-level">
 
-            <details>
-              <summary><img src="../images/firefox.svg" alt="Mozilla Firefox Logo" style="width: 1em;"> Mozilla Firefox</summary>
-              <ol>
-                <li>Klicken Sie oben rechts auf die drei Linien (Menü).</li>
-                <li>Wählen Sie Einstellungen.</li>
-                <li>Scrollen Sie im Bereich Allgemein nach unten bis zum Abschnitt Downloads.</li>
-                <li>Wählen Sie die Option „Jedes Mal fragen, wo eine Datei gespeichert werden soll“ aus.</li>
-              </ol>
-            </details>
-
-            <details>
-              <summary><img src="../images/chrome.svg" alt="Google Chrome Logo" style="width: 1em;"> Google Chrome</summary>
-              <ol>
-                <li>Klicken Sie oben rechts auf die drei Punkte (Menü).</li>
-                <li>Wählen Sie Einstellungen.</li>
-                <li>Klicken Sie in der linken Leiste auf Downloads.</li>
-                <li>Aktivieren Sie den Schalter bei „Vor dem Download von Dateien fragen, wo diese gespeichert werden sollen“.</li>
-              </ol>
-            </details>
-
-            <details>
-              <summary><img src="../images/edge.svg" alt="Microsoft Edge Logo" style="width: 1em;"> Microsoft Edge</summary>
-              <ol>
-                <li>Klicken Sie oben rechts auf die drei Punkte (Menü).</li>
-                <li>Wählen Sie Einstellungen.</li>
-                <li>Klicken Sie in der linken Leiste auf Downloads.</li>
-                <li>Aktivieren Sie den Schalter bei „Vor dem Download fragen, was mit der Datei geschehen soll“.</li>
-              </ol>
-            </details>
-
-            <details>
-              <summary><img src="../images/safari.svg" alt="Apple Safari Logo" style="width: 1em;"> Apple Safari (Mac)</summary>
-              <ol>
-                <li>Klicken Sie ganz oben links in der Menüleiste auf Safari.</li>
-                <li>Wählen Sie Einstellungen (oder Voreinstellungen).</li>
-                <li>Bleiben Sie im Reiter Allgemein.</li>
-                <li>Suchen Sie den Punkt „Download-Ordner“.</li>
-                <li>Klicken Sie auf das Dropdown-Menü und wählen Sie „Jedes Mal fragen“.</li>
-              </ol>
-            </details>
-          </li>
-
-          <li>Variante 1 (empfohlen):
+          <li><strong>Variante (empfohlen):</strong>
             <ul>
+              <li>Download-Verzeichnis des Browsers ändern:
+
+                <details>
+                  <summary><img src="../images/firefox.svg" alt="Mozilla Firefox Logo" style="width: 1em;"> Mozilla Firefox</summary>
+                  <ol>
+                    <li>Klicken Sie oben rechts auf die drei Linien (Menü).</li>
+                    <li>Wählen Sie Einstellungen.</li>
+                    <li>Scrollen Sie im Bereich Allgemein nach unten bis zum Abschnitt Downloads.</li>
+                    <li>Wählen Sie die Option „Jedes Mal fragen, wo eine Datei gespeichert werden soll“ aus.</li>
+                  </ol>
+                </details>
+
+                <details>
+                  <summary><img src="../images/chrome.svg" alt="Google Chrome Logo" style="width: 1em;"> Google Chrome</summary>
+                  <ol>
+                    <li>Klicken Sie oben rechts auf die drei Punkte (Menü).</li>
+                    <li>Wählen Sie Einstellungen.</li>
+                    <li>Klicken Sie in der linken Leiste auf Downloads.</li>
+                    <li>Aktivieren Sie den Schalter bei „Vor dem Download von Dateien fragen, wo diese gespeichert werden sollen“.</li>
+                  </ol>
+                </details>
+
+                <details>
+                  <summary><img src="../images/edge.svg" alt="Microsoft Edge Logo" style="width: 1em;"> Microsoft Edge</summary>
+                  <ol>
+                    <li>Klicken Sie oben rechts auf die drei Punkte (Menü).</li>
+                    <li>Wählen Sie Einstellungen.</li>
+                    <li>Klicken Sie in der linken Leiste auf Downloads.</li>
+                    <li>Aktivieren Sie den Schalter bei „Vor dem Download fragen, was mit der Datei geschehen soll“.</li>
+                  </ol>
+                </details>
+
+                <details>
+                  <summary><img src="../images/safari.svg" alt="Apple Safari Logo" style="width: 1em;"> Apple Safari (Mac)</summary>
+                  <ol>
+                    <li>Klicken Sie ganz oben links in der Menüleiste auf Safari.</li>
+                    <li>Wählen Sie Einstellungen (oder Voreinstellungen).</li>
+                    <li>Bleiben Sie im Reiter Allgemein.</li>
+                    <li>Suchen Sie den Punkt „Download-Ordner“.</li>
+                    <li>Klicken Sie auf das Dropdown-Menü und wählen Sie „Jedes Mal fragen“.</li>
+                  </ol>
+                </details>
+              </li>
               <li>Den folgenden Pfad je nach OS in die Zwischenablage kopieren:
                 <ul>
                   <li>
-                    <strong>Windows:</strong><br><code>%APPDATA%\Code\User\snippets</code>
+                    <strong>Windows:</strong> <code>%APPDATA%\Code\User\snippets</code>
                   </li>
                   <li>
-                    <strong>Mac:</strong><br><code>~/Library/Application Support/Code/User/snippets/</code>
+                    <strong>Mac:</strong> <code>~/Library/Application Support/Code/User/snippets/</code>
                   </li>
                   <li>
-                    <strong>Linux:</strong><br><code>$HOME/.config/Code/User/snippets/</code> bzw.<br><code>~/.config/Code/User/snippets</code>
+                    <strong>Linux:</strong> <code>$HOME/.config/Code/User/snippets/</code> bzw. <code>~/.config/Code/User/snippets</code>
                   </li>
                 </ul>
               </li>
               <li>Diesen Link klicken um die Snippets-Datei(en) herunterzuladen: <?= $snOutput; ?>.</li>
               <li>In die Adresszeile des Öffnen-Dialogs den kopierten Pfad einfügen und die Snippet-Datei dort speichern.</li>
-              <li>Sollte bereits eine Datei <?= $snNameOutput; ?> existieren: diese ersetzen oder:</li>
+              <li>Sollte bereits eine Datei <?= $snNameOutput; ?> existieren; diese ersetzen.</li>
             </ul>
           </li>
-          <li>Variante 2:
+          <li><strong>Variante:</strong>
             <ul>
               <li>Die Datei(en) in einem Editor öffnen, bzw.</li>
               <li>eine Text-Datei anlegen und unter dem Namen <?= $snNameOutput; ?> im oben genannten Verzeichnis speichern und</li>
               <li>unten stehenden Code in die neue(n) Datei(en) kopieren, bzw. die bestehende(n) Datei(en) nach dem unten stehenden Muster ändern oder:</li>
             </ul>
           </li>
-          <li>Variante 3:
+          <li><strong>Variante:</strong>
             <ul>
-              <li>Im VSCode unter <strong>Datei &gt; Einstellungen &gt; Benutzercodeschnipsel konfigurieren</strong> (Windows) bzw. <strong>Code &gt; Einstellungen &gt; Benutzercodeschnipsel konfigurieren</strong> (Mac) eine "Neue globale Codeschnipseldatei..." erstellen und diese z.B. <?= $snNameOutput; ?> benennen.</li>
+              <li>Im VSCode unter <code>Datei &gt; Einstellungen &gt; Benutzercodeschnipsel konfigurieren</code> (Windows/Linux) bzw. <code>Code &gt; Einstellungen &gt; Benutzercodeschnipsel konfigurieren</code> (Mac) eine "Neue globale Codeschnipseldatei..." erstellen und diese z.B. <?= $snNameOutput; ?> benennen.<br>
+              In der englischen Version: <code>File &gt; Preferences &gt; Configure User Snippets</code> (Windows/Linux) bzw. <code>Code &gt; Settings &gt; Configure User Snippets</code> (Mac).</li>
               <li>Den unten stehenden Code in diese Datei kopieren und speichern.</li>
+            </ul>
+          </li>
+          <li><strong>Variante:</strong>
+            <ul>
+              <li>Die Tastenkombination <kbd>Strg / Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> drücken um die Befehlspalette zu öffnen.</li>
+              <li>Im Suchfeld <code>Snippets</code> eingeben.</li>
+              <li>Den Befehl <code>Einstellungen: Benutzersnippets konfigurieren</code> bzw. auf Englisch <code>Preferences: Configure User Snippets</code> auswählen.</li>
             </ul>
           </li>
         </ol>

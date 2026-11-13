@@ -27,6 +27,6 @@ $snippets = array(
   'JavaScript' => 'jdb-js.code-snippets'
 );
 // $courseFiles = getCourseFiles($filePrefix);
-$courseFiles = 'Das Kursmaterial bitte von Github klonen: <a href="https://github.com/jaderbass/typescript-course-2027.git" target_"_blank">https://github.com/jaderbass/typescript-course-2027.git</a>';
+$courseFiles = 'Das Kursmaterial bitte von Github klonen: <a href="https://github.com/jaderbass/typescript-course-2027.git" target="_blank">https://github.com/jaderbass/typescript-course-2027.git</a>!';
 
 include_once 'template.inc.php';

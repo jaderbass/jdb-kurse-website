@@ -50,6 +50,14 @@ $includedExtensions = array(
 $snippets = array(
   'HTML / CSS' => 'jdb-html.code-snippets'
 );
-$courseFiles = getCourseFiles($filePrefix);
+// $courseFiles = getCourseFiles($filePrefix);
+$courseFiles = '<p>Das Kursmaterial bitte von Github klonen!</p>
+  <ol class="mb-5">
+    <li>HTML <a href="https://github.com/jaderbass/typescript-course-2027.git" target="_blank">https://github.com/jaderbass/course-html-template.git</a></li>
+    <li>Flexbox <a href="https://github.com/jaderbass/typescript-course-2027.git" target="_blank">https://github.com/jaderbass/course-flexbox-template.git</a></li>
+    <li>Grid <a href="https://github.com/jaderbass/typescript-course-2027.git" target="_blank">https://github.com/jaderbass/course-grid-template.git</a></li>
+    <li>Sass <a href="https://github.com/jaderbass/typescript-course-2027.git" target="_blank">https://github.com/jaderbass/course-sass-template.git</a></li>
+    <li>Bootstrap <a href="https://github.com/jaderbass/typescript-course-2027.git" target="_blank">https://github.com/jaderbass/course-bootstrap-template.git</a></li>
+  </ol>';
 
 include_once 'template.inc.php';
