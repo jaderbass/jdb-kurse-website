@@ -21,7 +21,7 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
       <section class="row flex-lg-row-reverse justify-content-center align-items-center g-5 py-5">
         <div class="col-6 col-sm-4 col-lg-3">
           <?php if (isset($pageLogo)) : ?>
-            <img src="<?= $pageLogo; ?>" class="page-logo d-block mx-auto img-fluid" alt="<?= $pageTitle; ?> Logo" loading="lazy">
+            <img src="<?= $pageLogo; ?>" class="page-logo d-block mx-auto img-fluid" alt="">
           <?php endif; ?>
         </div>
         <div class="col-lg-9 text-center text-lg-start">
