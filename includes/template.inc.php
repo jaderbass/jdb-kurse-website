@@ -36,7 +36,7 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
 
 
   <div class="container pt-5">
-    <div class="row justify-content-between">
+    <div class="row justify-content-center">
       <section class="col-12">
         
         <!-- ? Kursdateien
@@ -67,29 +67,40 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
           <p>Für diesen Kurs werden momentan keine zusätzlichen Kursdateien benötigt.</p>
         <?php endif; ?>
 
-        <!-- ? Hinweis PHP
-        ? ============================================================================================= -->
-        <?php if ($filePrefix === 'php') : ?>
-          <h2 id="notice">
-            <img src="images/info.svg" alt="">
-            Hinweis
-          </h2>
-          <p>PHP ist eine serverbasierte Skriptsprache. Um mit PHP entwickeln zu können benötigen wir einen Webserver. Welchen Webserver wir benutzen ist im Grunde egal. Hauptsache ist, dass PHP auf diesem Webserver installiert ist.</p>
-          <?= $webserverText; ?>
-          
-        <?php endif; ?>
+      </section>
+      <section class="col-12 col-lg-10">
 
-        <!-- ? Hinweis Laravel
-        ? ============================================================================================= -->
-        <?php if ($filePrefix === 'laravel') : ?>
-          <h2 id="notice">
-            <img src="images/info.svg" alt="">
-            Hinweis
-          </h2>
-          <p>Laravel ist ein weit verbreitetes PHP-Framework. Für die Entwicklung bringt Laravel einen eigenen Webserver mit.</p>
-          <p>Da wir allerdings mit Datenbanken arbeiten und geringe administrative Aufgaben erledigen müssen, sollte ein Datenbank-Server installiert sein.</p>
-          <?= $webserverText; ?>
-        <?php endif; ?>
+        <div class="alert alert-info" role="alert">
+          
+          <div>
+            
+            <h4 class="alert-heading mt-0 text-dark" id="notice">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" class="bi me-2 mt-2 text-dark" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+                <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+              </svg>
+              Hinweis
+            </h2>
+          <!-- ? Hinweis PHP
+          ? ============================================================================================= -->
+          <?php if ($filePrefix === 'php') : ?>
+            <p>PHP ist eine serverbasierte Skriptsprache. Um mit PHP entwickeln zu können benötigen wir einen Webserver. Welchen Webserver wir benutzen ist im Grunde egal. Hauptsache ist, dass PHP auf diesem Webserver installiert ist.</p>     
+          <?php endif; ?>
+
+          <!-- ? Hinweis Laravel
+          ? ============================================================================================= -->
+          <?php if ($filePrefix === 'laravel') : ?>
+            <p>Laravel ist ein weit verbreitetes PHP-Framework. Für die Entwicklung bringt Laravel einen eigenen Webserver mit.</p>
+            <p>Da wir allerdings mit Datenbanken arbeiten und geringe administrative Aufgaben erledigen müssen, sollte zusätzlich ein Datenbank-Server installiert sein.</p>
+          <?php endif; ?>
+
+          <hr>
+            
+          <div><?= $webserverText; ?></div>
+        </div>
+        </div>
+
+      </section>
+      <section class="col-12">
 
         <!-- ? Executable Path
         ? ============================================================================================= -->
@@ -100,24 +111,33 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
           </h2>
           <ol>
             <li>über <code><kbd>STRG</kbd> + <kbd>,</kbd></code> die Settings öffnen</li>
-            <li>oben rechts auf das kleine Datei-Icon klicken <img src="images/settings-icon.png" alt="settings icon"></li>
             <li>
-              der Eintrag <code class="language-json">"php.validate.executablePath": ""</code> wird ans Ende der Datei <code>settings.json</code> geschrieben. Diesen Eintrag mit dem Pfad der PHP-Erweiterung ergänzen.<br>solltest Du noch <b>XAMPP</b> mit der Standard-Installation nutzen, sieht der komplette Eintrag folgendermaßen aus:
-
-              <?php
-              $htmlOutput = printCopyToClipboardButton('"php.validate.executablePath": "c:/xampp/php/php.exe"', 'php', 'json');
-              echo $htmlOutput;
-              ?>
-
-              Wenn Du <b>Laragon</b> mit der Standard-Installation nutzt, nimmst Du folgenden Eintrag:
-
-              <?php
-              $htmlOutput = printCopyToClipboardButton('"php.validate.executablePath": "c:/laragon/bin/php.exe"', 'laragon', 'json');
-              echo $htmlOutput;
-              ?>
-
+              <ul>
+                <li>im Suchfeld nach <code>PHP executable path</code> suchen und unter <code><span class="text-muted">PHP > Validate:</span> Executable Path</code> auf den Link <code>Edit in settings.json</code> klicken<br><strong>ODER</strong><br>oben rechts auf das kleine Datei-Icon klicken <img src="images/settings-icon.png" alt="settings icon"></li>
+                <li>der Eintrag <code class="language-json">"php.validate.executablePath": ""</code> wird ans Ende der Datei <code>settings.json</code> geschrieben.</li>
+              </ul>
             </li>
+            <li>Diesen Eintrag mit dem Pfad der PHP-Erweiterung ergänzen.</li>
+            
           </ol>
+              
+            <div class="row justify-content-center">
+              <div class="col-md-6">
+                Wenn Du <b>Laragon</b> mit der Standard-Installation nutzt, nimmst Du folgenden Eintrag:
+                <?php
+                $htmlOutput = printCopyToClipboardButton('"php.validate.executablePath": "c:/laragon/bin/php.exe"', 'laragon', 'json');
+                echo $htmlOutput;
+                ?>
+              </div>
+              <div class="col-md-6">
+                Solltest Du noch <b>XAMPP</b> mit der Standard-Installation nutzen, sieht der komplette Eintrag folgendermaßen aus:
+                <?php
+                $htmlOutput = printCopyToClipboardButton('"php.validate.executablePath": "c:/xampp/php/php.exe"', 'php', 'json');
+                echo $htmlOutput;
+                ?>
+              </div>
+            </div>
+
         <?php endif; ?>          
 
         <!-- ? Hinweis React
@@ -204,7 +224,7 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
                       >
 
                       <div>
-                        <h3 class="card-title h5 mb-1">
+                        <h3 class="card-title h6 mb-1">
                           <a
                               href="<?= htmlspecialchars($properties['url']); ?>"
                               target="_blank"

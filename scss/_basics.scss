@@ -164,11 +164,11 @@ h3>img {
 
 .highlight {
   position: relative;
-  padding: .75rem 1.5rem;
+  padding: .75rem;
   background-color: var(--bd-pre-bg);
 
   @include media-breakpoint-up(md) {
-    padding: .75rem 1.25rem;
+    padding: .75rem 1rem;
     border-radius: calc(var(--bs-border-radius) - 1px);
   }
 }

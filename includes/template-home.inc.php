@@ -13,52 +13,131 @@
 
   <div class="container">
     <div class="row justify-content-center mb-5">
-      <h2 id="vscodesetup" class="mt-5 text-center">Grundlegendes VSCode-Setup</h2>
-      <div class="col col-md-10 text-center">
+      <div class="col col-md-10">
+        <h2 id="vscodesetup" class="mt-5">Grundlegendes VSCode-Setup</h2>
         <p>Ich nutze zum Coden den <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code Editor von Microsoft</a>. <br>Mit seinen vielen Erweiterungen und Hilfen ein excellenter Code-Editor für das Web-Development.</p>
         <p>Falls Du den Visual Studio Code Editor nicht installieren willst oder kannst,<br>dann gibt es noch die Möglichkeit, diesen "on the Web" unter der URL <a href="https://vscode.dev/" target="_blank">https://vscode.dev/</a> zu nutzen.</p>
       </div>
     </div>
 
     <div class="row justify-content-center mb-5 g-5">
-      <div class="col col-md-10 col-lg-6 col-xl-5">
+      <div class="col col-md-10">
         <h3 id="themes">
           <img src="images/color-designs.svg" alt="">
           Meine genutzten Editor-Themes
         </h3>
-        <p>Für die Coding-Aufgaben auf meinem Entwicklungsrechner nutze ich das Andromeda-Theme von Eliver Lara. Ein Dark-Theme, welches mir am besten gefällt.</p>
+        <p>Für die Coding-Aufgaben auf meinem Entwicklungsrechner nutze ich das Theme <strong>"Andromeda"</strong> von Eliver Lara. </p>
         <p>Für meine Präsenz-Kurse nutze ich das Theme <strong>"Light&nbsp;2026"</strong> von VS Code. Ich nutze dieses Light-Theme, da es auf dem Beamer für die Teilnehmer besser funktioniert als ein Dark-Theme.</p>
-        <p>Für den XML-Kurs nutze ich das Atom-One-Light-Theme von Mahmoud Ali, da hier die XML-Syntax ein wenig besser hervorgehoben wird.</p>
-        <ul class="list-unstyled">
-          <li style="list-style-type:none;background:url('../images/andromeda-icon.png') no-repeat left top;background-size: 65px;">
-            <strong>Andromeda</strong> <small class="text-muted">von Eliver Lara</small><br>auf meinem Entwicklungs-Rechner für das eigene Coding
-          </li>
-          <li style="list-style-type:none;background:url('../vc-fav/favicon.ico') no-repeat left top;background-size: 65px;">
-            <strong>Light 2026</strong><br>für meine Präsenz-Kurse
-          </li>
-          <li style="list-style-type:none;background:url('../images/atom-one-light-icon.png') no-repeat left top;background-size: 65px;">
-            <strong>Atom One Light</strong> <small class="text-muted">von Mahmoud Ali</small><br>für meine XML-Präsenz-Kurse
-          </li>
-        </ul>
+        <p>Für den XML-Kurs nutze ich das Theme <strong>"Atom-One-Light"</strong> von Mahmoud Ali, da hier die XML-Syntax ein wenig besser hervorgehoben wird.</p>
+
+        <div class="row g-4 mb-5">
+          <div class="col-12 col-md-6 col-xl-4">
+            <article class="card h-100 extension-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3 mb-3">
+                  <img src="../images/andromeda-icon.png" alt="" class="extension-icon" loading="lazy">
+                  <div>
+                    <h3 class="card-title h6 mb-1"><a href="https://marketplace.visualstudio.com/items?itemName=EliverLara.andromeda" target="_blank" rel="noopener noreferrer">Andromeda</a></h3>
+
+                    <small class="d-block text-muted"> von Eliver Lara</small>
+                  </div>
+
+                </div>
+
+                <!-- Beschreibung -->
+                <div class="card-text">auf meinem Entwicklungs-Rechner für das eigene Coding</div>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <article class="card h-100 extension-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3 mb-3">
+                  <img src="../vc-fav/favicon.ico" alt="" class="extension-icon" loading="lazy">
+                  <div>
+                    <h3 class="card-title h6 mb-1">Light 2026</h3>
+
+                    <small class="d-block text-muted"> von Microsoft</small>
+                  </div>
+                </div>
+
+                <!-- Beschreibung -->
+                <div class="card-text">für meine Präsenz-Kurse</div>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <article class="card h-100 extension-card">
+              <div class="card-body">
+                <div class="d-flex align-items-start gap-3 mb-3">
+                  <img src="../images/atom-one-light-icon.png" alt="" class="extension-icon" loading="lazy">
+                  <div>
+                    <h3 class="card-title h6 mb-1"><a href="https://marketplace.visualstudio.com/items?itemName=akamud.vscode-theme-onelight" target="_blank" rel="noopener noreferrer">Atom One Light</a></h3>
+
+                    <small class="d-block text-muted"> von Mahmoud Ali</small>
+                  </div>
+
+                </div>
+
+                <!-- Beschreibung -->
+                <div class="card-text">für meine XML-Präsenz-Kurse</div>
+              </div>
+            </article>
+          </div>
+        </div>
+
       </div>
 
-      <div class="col col-md-10 col-lg-6 col-xl-5">
+      <div class="col col-md-10">
         <h3 id="ext">
           <img src="images/extensions.svg" alt="">
           Liste der Erweiterungen
         </h3>
         <p>Meine Standard-Erweiterungen für alle Kurse. Die speziellen Erweiterungen für die einzelnen Kurse findet ihr auf der entsprechenden Kurs-Seite.</p>
+
+        <div class="row g-4 mb-5">
+
         <?php foreach ($extensions as $extLang => $extList) : ?>
-          <h3><?= $extLang; ?></h3>
-          <ul>
             <?php foreach ($extList as $extId => $properties) : ?>
-              <li style="list-style-type:none;background:url(<?= $properties['list-icon'] ?>) no-repeat left top;background-size:65px;padding:0 0 25px 75px;margin-left:-35px;margin-bottom:10px">
-                <a href="<?= $properties['url'] ?>" target="_blank"><?= $properties['name']; ?></a> <small class="text-muted"><i>von <?= $properties['autor']; ?></i></small>
-                <?= $properties['desc']; ?>
-              </li>
+              <div class="col-12 col-md-6 col-xl-4">
+                <article class="card h-100 extension-card">
+                  <div class="card-body">
+                    <div class="d-flex align-items-start gap-3 mb-3">
+                      <img
+                          src="<?= htmlspecialchars($properties['list-icon']); ?>"
+                          class="extension-icon"
+                          alt=""
+                          loading="lazy"
+                      >
+                      <div>
+                        <h3 class="card-title h6 mb-1">
+                          <a
+                              href="<?= htmlspecialchars($properties['url']); ?>"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                          >
+                            <?= htmlspecialchars($properties['name']); ?>
+                          </a>
+                        </h3>
+
+                        <small class="d-block text-muted">
+                          von <?= htmlspecialchars($properties['autor']); ?>
+                        </small>
+                      </div>
+                      
+                    </div>
+
+                    <!-- Beschreibung -->
+                    <div class="card-text">
+                      <?= $properties['desc']; ?>
+                    </div>
+                  </div>
+                </article>
+              </div>
             <?php endforeach; ?>
-          </ul>
         <?php endforeach; ?>
+
+        </div>
         <h4>Erweiterungen installieren</h4>
         <ul>
           <li>Klicke in der linken Navigationsleiste auf das Erweiterungen-Icon. Es ist das Icon mit den 4&nbsp;Quadraten, wie oben an der Überschrift "Liste der Erweiterungen", oder nutze die Tastenkombination <kbd>STRG</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> um das Erweiterungen-Tab zu öffnen.</li>
@@ -70,7 +149,7 @@
     </div>
 
     <div class="row justify-content-center g-5">
-      <div class="col col-md-10 col-lg-6 col-xl-5">
+      <div class="col col-md-10">
         <h3 id="emmetvariablen">
           <img src="images/emmet-logo-sw-fill.svg" alt="">
           Emmet-Variablen einstellen
@@ -93,7 +172,7 @@
 
       </div>
 
-      <div class="col col-md-10 col-lg-6 col-xl-5">
+      <div class="col col-md-10">
         <h3 id="editorfont">
           <img src="images/settings-gear.svg" alt="">
           Fira Code als Editor-Schriftart
@@ -125,7 +204,7 @@
       
 
     <div class="row justify-content-center g-5">
-        <div class="col col-md-10 col-lg-6 col-xl-5">
+        <div class="col col-md-10">
           <h3 id="mySettings">
             <img src="images/settings-gear.svg" alt="">
             Meine bevorzugten Einstellungen
@@ -151,7 +230,7 @@
           <p>Seit Kurzem ist dies in VSCode installiert. Man kann diese Einstellung unter dem Suchwort <b><span class="text-secondary">Editor:</span> Linked Editing</b> in den Einstellungen finden und muss dort die Checkbox aktivieren.</p>
 
         </div>
-        <div class="col col-md-10 col-lg-6 col-xl-5">
+        <div class="col col-md-10">
           <h3 id="shortcodes">
             <img src="images/settings-gear.svg" alt="">
             Eigene Tastenkombinationen erstellen
