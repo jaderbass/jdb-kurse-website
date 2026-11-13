@@ -63,4 +63,6 @@ $snippets = array(
 );
 $courseFiles = getCourseFiles($filePrefix);
 
+// $courseFiles .= '<p class="mb-5">Die Erweiterung <strong>PHPMailer</strong> bitte von Github herunterladen (grüner Button <kbd class="text-bg-success">&lt;&gt; Code</kbd> <code>&minus;&gt; Download ZIP</code>)!<br><a href="https://github.com/PHPMailer" target="_blank">https://github.com/PHPMailer</a></p>';
+
 include_once 'template.inc.php';

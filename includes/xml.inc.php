@@ -32,6 +32,6 @@ $extensions = array(
 $snippets = array(
   'XML' => 'jdb-xml.code-snippets'
 );
-$courseFiles = getCourseFiles($filePrefix);
+$courseFiles = '<p class="mb-5">Das Kursmaterial bitte von Github herunterladen (grüner Button <kbd class="text-bg-success">&lt;&gt; Code</kbd> <code>&minus;&gt; Download ZIP</code>)!<br><a href="https://github.com/jaderbass/course-xml-template.git" target="_blank">https://github.com/jaderbass/course-xml-template.git</a></p>';
 
 include_once 'template.inc.php';

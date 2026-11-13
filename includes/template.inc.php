@@ -37,7 +37,7 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
 
   <div class="container pt-5">
     <div class="row justify-content-center">
-      <section class="col-12">
+      <section class="col-12 mb-5">
         
         <!-- ? Kursdateien
         ? ============================================================================================= -->
@@ -61,6 +61,9 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
               <?php endforeach; ?>
             <?php endforeach; ?>
           </ul>
+          <?php if ($filePrefix === 'php'): ?>
+            <p>Bei Nutzung der <strong>PHPMailer</strong> Erweiterung die Anweisungen unter <a href="https://github.com/PHPMailer/PHPMailer" target="_blank">https://github.com/PHPMailer/PHPMailer</a> lesen (runterscrollen zur README)!</p>
+          <?php endif; ?>
         <?php elseif (isset($courseFiles) && is_string($courseFiles)): ?>
           <p><?= $courseFiles ?></p>
         <?php else : ?>
@@ -69,7 +72,7 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
 
       </section>
 
-      <?php if (in_array($filePrefix, ['php', 'laravel'], true)) : ?>
+      <?php if (in_array($filePrefix, ['php', 'laravel', 'react', 'ts'], true)) : ?>
       <section class="col-12 col-lg-10">
 
         <div class="alert alert-info" role="alert">
@@ -77,7 +80,7 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
           <div>
             
             <h4 class="alert-heading mt-0 text-dark" id="notice">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" class="bi me-2 mt-2 text-dark" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" class="bi me-2 mt-2" viewBox="0 0 16 16" role="img" aria-label="Info:" style="color: var(--jdb-color-primary);">
                 <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
               </svg>
               Hinweis
@@ -95,9 +98,31 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
             <p>Da wir allerdings mit Datenbanken arbeiten und geringe administrative Aufgaben erledigen müssen, sollte zusätzlich ein Datenbank-Server installiert sein.</p>
           <?php endif; ?>
 
-          <hr>
+          <!-- ? Hinweise React
+          ? ============================================================================================= -->
+          <?php if (in_array($filePrefix, ['react', 'ts'], true)) : ?>
+            <ul>
+          
+            <?php if ($filePrefix === 'react') : ?>
+              <li>React-Projekte werden mit <strong>Node.js</strong> / <strong>npm</strong> und <strong>Parcel</strong> gestartet.</li>
+              <li><code class="language-react">package.json</code> darf bei Parcel-Projekten keinen unnötigen "<code class="language-html">main</code>"-Eintrag enthalten, wenn dieser den Serve-Modus stört.</li>
+              <li>Bei einer leeren/starren Anzeige trotz laufendem Parcel kann ein <strong>manuelles Neuladen im Browser</strong> helfen.</li>
+            <?php endif; ?>
+
+          <!-- ? Hinweis React und TypeScript
+          ? ============================================================================================= -->
+            <li><strong>Live Server wird für die TypeScript- und React-Projekte nicht verwendet.</strong></li>
+            <li>Bei Problemen mit <code class="language-plaintext">npm</code> in PowerShell kann unter Windows die <a href="?page=help#winps">Execution Policy</a> eine Rolle spielen.</li>
+            <li><code class="language-plaintext">node_modules</code> gehört <strong>nicht ins Git-Repository</strong>.</li>
+
+          </ul>
+          <?php endif; ?>
+
+          <?php if (in_array($filePrefix, ['php', 'laravel'], true)) : ?>
+            <hr>
             
-          <div><?= $webserverText; ?></div>
+            <div><?= $webserverText; ?></div>
+          <?php endif; ?>
         </div>
         </div>
 
@@ -143,23 +168,6 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
             </div>
 
         <?php endif; ?>          
-
-        <!-- ? Hinweis React
-        ? ============================================================================================= -->
-        <?php if ($filePrefix === 'react') : ?>
-          <h2 id="notice">
-            <img src="images/info.svg" alt="">
-            Hinweis
-          </h2>
-          <ul>
-            <li>React-Projekte werden mit <strong>Node.js</strong> / <strong>npm</strong> und <strong>Parcel</strong> gestartet.</li>
-            <li><strong>Live Server wird für die React-Projekte nicht verwendet.</strong></li>
-            <li><code class="language-react">package.json</code> darf bei Parcel-Projekten keinen unnötigen "<code class="language-html">main</code>"-Eintrag enthalten, wenn dieser den Serve-Modus stört.</li>
-            <li>Bei Problemen mit <code class="language-plaintext">npm</code> in PowerShell kann unter Windows die <a href="?page=help#winps">Execution Policy</a> eine Rolle spielen.</li>
-            <li>Bei einer leeren/starren Anzeige trotz laufendem Parcel kann ein <strong>manuelles Neuladen im Browser</strong> helfen.</li>
-            <li><code class="language-plaintext">node_modules</code> gehört <strong>nicht ins Git-Repository</strong>.</li>
-          </ul>
-        <?php endif; ?>
 
       </section>
 
@@ -435,7 +443,7 @@ $webserverText = '<p>Bisher habe ich, um lokal wie mit einem "echten" Webserver 
   <!-- ? Snippets-Codes
   ? ============================================================================================= -->
   <section class="container my-5">
-    <h3>Snippets für <?= $pageTitle; ?></h3>
+    <h3>Snippets-Codes für <?= $pageTitle; ?></h3>
     <?php foreach ($snippets as $snippetLang => $snippetFile) : ?>
       <div class="accordion" id="snippetAccordion<?= substr($snippetLang, 0, 3); ?>">
         <div class="accordion-item">

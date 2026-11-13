@@ -51,7 +51,7 @@ $snippets = array(
   'HTML / CSS' => 'jdb-html.code-snippets'
 );
 // $courseFiles = getCourseFiles($filePrefix);
-$courseFiles = '<p>Das Kursmaterial bitte von Github klonen!</p>
+$courseFiles = '<p>Das Kursmaterial bitte von Github herunterladen (grüner Button <kbd class="text-bg-success">&lt;&gt; Code</kbd> <code>&minus;&gt; Download ZIP</code>)!</p>
   <ol class="mb-5">
     <li>HTML <a href="https://github.com/jaderbass/typescript-course-2027.git" target="_blank">https://github.com/jaderbass/course-html-template.git</a></li>
     <li>Flexbox <a href="https://github.com/jaderbass/typescript-course-2027.git" target="_blank">https://github.com/jaderbass/course-flexbox-template.git</a></li>
